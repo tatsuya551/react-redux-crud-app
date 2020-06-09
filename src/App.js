@@ -1,5 +1,6 @@
 import React from 'react';
 
+// クラスコンポーネント
 // class App extends Component {
 //   render() {
 //     return (
@@ -11,6 +12,8 @@ import React from 'react';
 //   }
 // }
 
+
+// ファンクショナルコンポーネント(関数)
 const App = () => {
   return (
     <div>
