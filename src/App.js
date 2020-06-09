@@ -1,31 +1,31 @@
 import React from 'react';
 
-// クラスコンポーネント
-// class App extends Component {
-//   render() {
-//     return (
-//       <React.Fragment>
-//         <label htmlFor="bar">bar</label>
-//         <input type="text" onChange={() => {console.log("I am clicked.")}} />
-//       </React.Fragment>
-//     )
-//   }
-// }
-
-
 // ファンクショナルコンポーネント(関数)
 const App = () => {
+  const profiles = [
+    { name: "Taro", age: 10 },
+    { name: "Hanako", age: 5 },
+    { name: "Masa" },
+    {}
+  ]
   return (
     <div>
-      <Cat />
-      <Cat />
-      <Cat />
+      {
+        profiles.map((profile, index) => {
+          return <User name={profile.name} age={profile.age} key={index} />
+        })
+      }
     </div>
   )
 }
 
-const Cat = () => {
-  return <div>Meow!</div>
+const User = (props) => {
+  return <div>Hi,I am {props.name}, and {props.age} years old!</div>
+}
+
+// propsのデフォルト設定
+User.defaultProps = {
+  name: "NoName", age: 1
 }
 
 export default App;
